@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    list-style: none;
+    text-decoration: none;
+    max-width: 100%;
+   
+
+
+    
+   
+
+}
+.titulo{
+    font-size: 60px;
+        margin: 40px 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    align-items: center;
+    
+
+}
+.imagem {
+
+    width: 30rem;
+    height: 20rem;
+   
+   
+   
+ 
+}
+.cabeçalho{
+    text-align: center;
+    margin: 10rem 40px 2rem 40px;
+    max-width: 100%;
+    align-items: center;
+    
+}
+.cabeçalho-h2, .cabeçalho-h3{
+    text-align: center;
+    margin: 2rem;
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;  
+    max-width: 100%;
+    align-items: center;
+    
+}
+.btn{
+    
+    padding: 10px;
+    background: rgb(108, 188, 225);
+    border-radius: 20px;
+    text-align: center;
+    display: inline-flex;
+    margin: 10px;
+   
+    cursor: pointer;
+}
+.btn:hover{
+    background: red;
+    color: aliceblue;
+}
+.naveg{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    box-shadow: 0 0.5rem 0.5rem #ccc;
+    width: 100%;
+    background: rgb(64, 184, 240);
+    transition: all 0.5s;
+    position: fixed;
+    top: 0;
+
+
+}
+
+.naveg ul{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    
+
+}
+.ni {
+    padding: 15px;
+    background: rgba(5, 53, 227);
+    border-radius: 12px;
+    border: solid black .2rem;
+    
+    
+}
+.naveg ul li a{
+    color: black;
+    font-size: 20px;
+    font-weight: 800;
+    transition: all 0.5s;
+}
+.naveg ul li a:hover{
+    color: red;
+}
+
+body{
+    background: rgb(255, 255, 255) ;
+    color: black;
+    
+}
+.um{
+    cursor: pointer;
+    display: none;
+}
+
+.um .bar{
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    background: black;
+    margin: 5px auto;
+    transition: all 0.3s;
+}
+.um .bar:nth-child(1),
+.um .bar:nth-child(3){
+    background: red;
+}
+
+.nome img{
+    border: solid  rgba(0, 0, 0, 0.479) 2px;
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    display: block;
+   
+}
+
+.peixes {
+    display: flex;
+    max-width: 90%;
+    align-items: center;
+    justify-content: space-between;
+   
+    
+margin: auto;    
+       
+}
+
+.t-peixe{
+    max-width: 300px; 
+}
+
+.desc-aquario h1{
+    text-align: center;
+    align-items: center;
+    
+
+    
+}
+
+@media (max-width:785px){
+    .naveg{
+        padding: 18px 20px;
+        
+        
+    }
+    .um{
+        display: block;
+       
+        
+    
+    }
+    .um.ativo .bar:nth-child(1){
+        transform:translateY(8px)rotate(45deg)
+    }
+    .um.ativo .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .um.ativo .bar:nth-child(3){
+        transform:translateY(-8px)rotate(-45deg)
+    }
+    .nm{
+        position: fixed;
+        right: -100%;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        background: white;
+        gap: -10px;
+        transition: 0.3s;
+    }
+    .nm.ativo{
+        right: 0;
+    }
+    .ni{
+        margin: 16px 0;
+    }
+    .peixes{
+       
+       width: 100%;
+       height: 100vh;
+       justify-content: space-between;
+       flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
+       margin: 20px;
+       
+}
+.titulo{
+    font-size: 35px;
+   
+   
+}
+}
+    

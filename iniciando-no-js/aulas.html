@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - getElementById</title>
+    <style>
+        .error {
+            border:2px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="time-pequeno">Curintia</div>
+    <div id="time-grande">São Paulo</div>
+    <div class="time-RJ">Vasco</div>
+    <div class="time-RJ">Botafogo</div>
+    <div class="time-MG">Cruzeiro</div>
+    <br>
+    <form></form>
+    <button>oi</button>
+    <div id="teste1">1</div>
+    <div class="teste2">222</div>
+    <div class="teste2">333</div>
+    <div class="teste2">444</div>
+    <p> teste 3</p>
+
+    <div class="teste">1</div>
+    <div class="teste">2</div>
+    <div class="teste">3</div>
+
+    <div id="pai">
+        <div class="filho">marcos</div>
+        <div class="filho">Pedro</div>
+        <div class="filho">Brunna</div>
+    </div>
+    <div id="paizao">
+        <div class="filho">Brigiana</div>
+        <div class="filho">Clermerson</div>
+        <div class="filho">Vangêsla</div>
+    </div>
+    <p>oi</p>
+    <p>olá</p>
+    <div id="nissan">
+
+    </div>
+    <div id="linux">
+        <div class="ubuntu">
+            ubuntu
+            <div class="elementaryos">elementary OS </div>
+        </div>
+        <div class="debian">Debian</div>
+    </div>
+    <div class="js">react</div>
+    <div class="js">angular</div>
+    <div class="js">typescript</div>
+    <div class="js">es6</div>
+    <h4>Meu botão</h4>
+    <button id="btn">click</button>
+    <select id="linguagens">
+        <option value="1">php</option>
+        <option value="2">javascript</option>
+        <option value="3">java</option>
+        <option value="4">c#</option>
+    </select>
+    <input type="text" id="nome1">
+    <input type="text" id="sobrenome1">
+    <br>
+    <br>
+    <input type="text" id="search">
+    <div id="result">Nenhum resultado</div>
+    <br>
+    <br>
+    <input type="text" id="text2">
+    <div id="result2" style="display: none">é o enter uhu</div>
+    
+    <form action="#" method="post">
+        <input type="text" name="name" value="">
+        <input type="email" name="email" value="">
+        <button type="submit">enter</button>
+    </form>
+  
+
+    <script>
+        console.log(
+            document.getElementById("time-grande").innerHTML //innerHTML serve para mostrar o valor que o ID carrega
+        )
+        console.log(
+            document.getElementsByClassName("time-RJ")[0].innerHTML
+            //innerHTML serve para mostrar o conteudo que o Class carrega
+            /*[0] este codigo mostra uma "coleção de HTML" então devo colocar qual o 
+            item desejado no caso o indice [0] - (VASCO) (sempre começa com 0)*/
+        )
+        console.log(
+            document.getElementsByTagName("button")[0].innerHTML
+        ) /*serve para buscar elementos de uma tag especfica no HTML
+        ;= Encerra a instrução*/
+        console.log(
+            document.querySelector(".teste2").innerHTML
+        )/*busca de maneira simplificada os getElementById, get ElementsByClassName e getElementsByTageName 
+        porém so busca o primeiro item, no exemplo a cima a class "teste2" tem 3 elementos com 3 valores diferentes,
+        esse codigo so busca o primeiro item não faz o Array com todos os itens com a mesma class.
+        Então a unica vantagem é utiliza-lo quando tiver apenas um tipo do elemento no HTML, caso contrario o mais adequado 
+        é usar os outros a cima. 
+        Outro detalhe é que os codigos seguem a mesma sintaxe do CSS*/
+        console.log(
+            document.querySelectorAll(".filho")[0].innerHTML
+        ) /*busca todos os elementos sob aquele indice e faz o Array*/
+        console.log(
+            document.getElementById("paizao").querySelectorAll(".filho")[1].innerHTML
+        )/*dessa forma sob o get.ElementById, o querySelectorAll funciona como um filtro do sobre o Id, 
+        primeiro damos a busca no Id como o Id não carrega nenhum valor o innerHTML fica em branco pois as
+        referencias está o div filho com a class "filho", o querySelectorAll faz a busca dos filhos e com o
+        contador ([0]) me mostra o primeiro filho do Id "paizao"*/
+        var img = document.createElement("img");
+        img.src="https://fastly.picsum.photos/id/1008/200/300.jpg?hmac=0fzZCUbJIQr1Tzv0NouxjNJyrnIZRJJe4dBcmHSo7OY";
+        var p = document.createElement("p");
+        p.innerHTML = "olá tudo bem?";
+        console.log(
+            img, p
+        )/*usado para criar elementos no java script, nesse caso eu criei uma imagem e um paragrafo e 
+        mostro no console um seguido do outro*/
+        var versa = document.createElement("p");
+        versa.innerHTML = "versa"
+
+        var sentra = document.createElement("p");
+        sentra.innerHTML = "sentra"
+        
+        document.getElementById("nissan").appendChild(versa);
+        document.getElementById("nissan").appendChild(sentra);
+        /*appendChild serve para inserir elementos dentro e outro elemento:
+        No corpo de meu HTML eu tenho uma div com o Id de "nissan", criei duas variveis e dentro dela o 
+        metodo de criar elementos, criei dois elementos filhos pra a div com Id "nissan" para ser mostrado 
+        no java script, abaixo criei o getElementById com o valor do Id nissan e um appendChild  versa para
+        inserir os elementos dentro de outro elemento HTML (no caso a div sob o Id "nissan") depois repeti o 
+        mesmo processo com o appendChild sentra*/
+        document.getElementById("nissan").removeChild(versa);
+        /*mesmo conceito a cima a diferença é que ele está removendo  um elemento filho pelo seu valor do
+        elemento no caso "versa"*/
+        console.log(
+            document.querySelector(".elementaryos").parentNode.parentNode
+        ) /*utilizado para localizar o elemento pai do elemento dado como valor 
+        pode colocar ".parentNode" até chegar a final dos elementos pai */    
+        
+        var js = document.getElementsByClassName('js');
+
+        for (let i = 0; i <js.length; i++){
+            let texto = js[i].innerHTML;
+            js[i].innerHTML = 'curso ' + texto + ' js';
+        }/*entre parateses vai a condição para executar o loop, criei uma variavel para representar a 
+        condição, coloquei um length na variavel "js" para fazer a contagem de quantas vez o loop irá 
+        se repetir e encerrei sua operação com o ponto e virgula para não alterar o valor da contagem.
+        incrementei com i++ para sempre que loop for realizado acresentar +1, assim evitando que rode
+        infinitamente o loop.
+        O for pode acessar um array normal e um HTMLcollection*/
+        var array = [1,2,"b",4]
+        array.forEach(function(element, index){
+            if(element===1){
+                array[index] = 'vire outra coisa';
+            }
+            console.log(array);
+        }) /*forEach só percorre arrays.
+        Ele vai sempre com uma função sob dois parametros: elemento da variavel e o indice do variavel
+        neste exemplo coloquei um if para localizar o elemento "1" e mudar para 'vire outra coisa'*/ 
+        
+        var nova = array.map(function(element, index){
+            if(element === 1) {
+                element = 'outra coisa';
+            }
+            return element;
+        })
+        console.log(nova);/*o map altera e retorna um novo elemento/lista e como eu alterei o valor do 
+        elemento [0] dei um return no element para atualizar o seu valor*/ 
+
+        var i = 0;
+        while(i < 5) {
+            console.log('oi');
+            i++;
+        } /* enquanto o valor for "true" ele vai repetir até a concluir sua condição se for verdadeira*/
+
+        var botao = document.getElementById("btn");
+        botao.addEventListener('click', function(){
+            alert("vc clicou")
+        }) //sintaxe: elemento.adicionarevento('nome do evento', função que executa pos evento)
+
+        var linguagens = document.getElementById("linguagens");
+
+        linguagens.addEventListener('change', function() {
+            var options = this.options;
+            var itemAtual = this.selectedIndex;
+            console.log(options[itemAtual].text);
+        })/*O evento de alteração é ativado para os elementos imput, select e textarea
+         quando uma alteração no valor do elemento é cometida pelo usuário.
+         A variavel options está puxando o array de options que "this" está fornecendo para nós
+         A variavel itemAtual está puxando as informações atuais do array atual selecionado atraves
+         do atributo "selectedIndex"
+         No console está compilando as informações, options=>itemAtual=>text (neste caso está pegando
+         o texto do option atual do HTML)*/
+        var nome1 = document.getElementById("nome1");
+        var sobrenome1 = document.getElementById("sobrenome1")   
+
+        nome1.addEventListener("blur", function() {
+            sobrenome1.value = this.value;
+        })/*O evento de blur é disparado quando um elemento perdeu o foco.
+        Neste exemplo, o valor digitado no input "nome1" após perder o foco (toda vez que eu sair do elemento) passa para
+        o input "sobrenome1" ("this" refere a variavel nome1. this.value quer dizer que o valor do sobrenome1
+        vai para o valor do nome1)*/
+
+        var text = document.getElementById("search");
+        var result = document.getElementById("result")
+        var resultDefaultText = "Nenhum resultado"
+        text.addEventListener("keyup", function() {
+            var value = this.value;
+            if (value !=="") {
+                result.innerText = this.value;
+            } else {
+                result.innerText = resultDefaultText
+            } 
+        }) /*O evento keyup é acionado quando uma tecla é liberada, ou seja assim que você tirar o dedo dela.
+        neste exemplo criei um input onde tudo que eu digitar reflete embaixo, e caso o campo estiver vazio "",
+        deixar texto  "Nenhum resultado".*/
+        var text2 = document.getElementById("text2");
+        var result2 = document.getElementById("result2");
+        const TECLAENTER = 13;
+        text2.addEventListener("keypress", function(evento){
+            if(evento.keyCode == TECLAENTER)
+            result2.style.display = "block";
+        }) /*O evento de keypress é disparado quando uma tecla é pressionada, ou seja encostar o dedão nela.
+        neste exemplo criei um botao cujo o mesmo identifica quando eu pressionar o botao enter me dando a 
+        mensagem abaixo da caixa: "é o enter uhu" atraves do css.*/
+
+        var form = document.querySelectorAll("form")[1];
+        form.addEventListener("submit", function(evento){
+            evento.preventDefault();
+            var isvalid = true;
+            for(var i = 0; i <this.elements.length; i++){
+                var item = this.elements[i];
+                if(item.type !== "submit") {
+                    if(item.value =="") {
+                        item.classList.add("error");
+                        isvalid = false;
+                    }else {
+                        item.classList.remove("error");
+                    }
+                }
+            }
+            console.log(isvalid);
+        })/*O evento submit é disparado quando o formulário entre em estado de submit ou seja enviar os 
+        dados para algum local.
+        Neste exemplo tive que alterar o padrão da aula pq a tag "form" ja tinha sido utilizada acima então
+        acabou puxando a tag anterior a qaul eu precisava. Mudei o modo de busca para querySelectorAll e 
+        coloquei o indice [1] pois era o segundo "form" no meu codigo.
+        coloquei um "preventDefault" para o formulario não atualizar e limpar os dados colocados. 
+        No exemplo é mostrado uma caixa vermelha em volta dos input de dados (menos no buttom) para acusar
+        quando esta vazio. 
+        rodei oum "for" para mostrar o os campos vazios de forma geral, os if's foram as condições para 
+        acusar a caixa vazia*/  
+     
+
+
+    
+    </script>
+</body>
+
+</html>

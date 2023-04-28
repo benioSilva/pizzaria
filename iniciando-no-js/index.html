@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste JAVA</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+      /*   let text = "Marcos";  
+      text = "Kaue"
+      text = 1
+
+        alert(text)
+        alert("Marcos" +" "+ text)
+        alert(5+text)
+        alert("4" + text)*/
+       
+// Create a Set
+
+
+  class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+
+  }
+  age() {
+    const date = new Date();
+    return date.getFullYear() - this.year;
+  }
+}
+
+const myCar = new Car("Ford", 2014);
+document.getElementById("demo").innerHTML =
+"My car is " + myCar.age() + " years old.";
+
+    </script>
+</body>
+</html>

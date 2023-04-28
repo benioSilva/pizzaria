@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <style>
+        body {
+            background-color: #efefef;
+            margin: auto 10%;
+        }
+        .box {
+            position: relative;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        #next, #prev, #botao{
+            font-size: 2rem;
+            background-color: #000;
+            color: #fff;
+            padding: 1rem 2rem;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+            width:100%;
+            height: 70px;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+        }
+        li{
+            margin-left: 20px;
+            text-transform: uppercase;
+        }
+        a {
+            color:#fff;
+            padding:25px 20px
+        }
+        a:hover,
+        a.active { 
+            background-color: yellow;
+            color:#000;
+        }
+        .container {
+            width: 400px;
+            height: 400px;
+            background-color: #000;
+            position: absolute;
+            top: 400px;
+            left: 100px;
+            padding: 20px;
+        }
+        .item {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            display: inline-block;
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <hr>
+    <button id="next">> Next</button>
+    <button id="prev">> Prev</button>
+    <button id="botao">click</button>
+    <div class="mensagem">Olá Brasil</div>
+    <ul>
+        <li><a class="link active" href="#">Home</a></li>
+        <li><a class="link" href="#">Empresa</a></li>
+        <li><a class="link" href="#">Projetos</a></li>
+        <li><a class="link" href="#">Contatos</a></li>
+    </ul>
+    <form action="#">
+        <label for="cep">CEP</label>
+        <input type="text" name="cep" id="cep" placeholder="00000-000
+        ">
+        <label for="logradouro">Logragradouro</label>
+        <input type="text" name="logradouro" id="logradouro"
+        placeholder="Avenida exemplo de tal">
+        <button id="botaoformulario">Submit</button>
+    </form>
+    <br>
+    <div class="resultadoformulario"></div>
+
+    <div class="container">
+        <div class="item"></div>
+    </div>
+
+    <script src="jquery-3.6.4.min.js"></script>
+    <script>
+        var box = $('.box');
+        var next = $ ("#next");
+        next.on("click",function(){
+            box.animate({
+                left: "800"
+            },1500)
+            
+        })
+        var prev = $ ("#next");
+        prev.on("click",function(){
+            box.animate({
+                left: "0"
+            },1500)
+            
+        })/*uma função com jQuery é declarada a partir do '$' e dentro dos parentese colacasse
+        o elemento que será analisado (seguindo a sintaxe do css).
+        a sintaxe do evento é: variavel.on("evento",function(){}).
+        nesse exercicio acima eu crio uma animação usando os estilos css e o comando atraves dos botoes next e prev
+        */
+        var botao = $("#botao");
+        var mensagem = $(".mensagem");
+        
+        botao.on("click", function(){
+            mensagem.delay(2000).fadeOut();
+        })/*com o botao "click" eu crio um comando que faz o meu texto "Olá Brasil" desaparecer sob o comando
+        fadeOut e com o "delay" dou tempo de 2segundos até ele desaparecer (1000 = 1 segundo)
+        */
+       
+        var link = $(".link");
+        link.on("click", function(){
+            link.removeClass("active");
+            $(this).addClass("active");
+
+        }) /*neste exemplo eu criei uma barra de navegação simples com objetivo de colocar um
+        link ativo em um dos itens somente quando eu clicar utlizando o comando acima para 
+        colocar a class "active" no item selecionado.
+        */
+        var form = $('form');
+        var resultadoformulario = $(".resultadoformulario");
+
+        form.on("submit", function(event){
+            event.preventDefault();
+
+           var data = $(this).serialize();
+           console.log(data);
+            resultadoformulario.text(data);
+        })/*aqui eu criei um formulario onde a minha intenção é de serializar os dados de todos os 
+        campos dados escritos (input) para isso utilzei event.preventDefault para não deixar que 
+        a minha pagina atualize fazendo eu perder os dados.
+        no outro comando, eu fiz a conversão do dados para o serialize.
+        */
+
+        var container = $(".container");
+        var item = $ (".item");
+        var posicao = item.position();
+        var posicao2 = item.offset();
+
+        console.log(posicao.left, posicao.top)
+        console.log(posicao2.left, posicao.top)
+        /*evento para medir a distancia de elemento para outro.
+        o primeiro mostra a distancia do elemento filho para o pai,
+        o segundo a distancia do elemento filho ('.item') para o HTML*/ 
+
+    </script>
+</body>
+</html>

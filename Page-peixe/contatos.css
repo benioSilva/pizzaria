@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow-x: hidden;
+    max-width: 100%;
+    color: black;
+}
+
+.naveg {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    box-shadow: 0 0.5rem 0.5rem #ccc;
+    width: 100%;
+    background: rgb(64, 184, 240);
+    transition: all 0.5s;
+    position: fixed;
+    top: 0;
+    list-style: none;
+    text-decoration: none;
+
+
+}
+
+.naveg ul {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    list-style: none;
+    text-decoration: none;
+
+
+}
+
+.ni {
+    padding: 15px;
+    background: rgba(5, 53, 227);
+    border-radius: 12px;
+    border: solid black .2rem;
+    list-style: none;
+    text-decoration: none;
+
+
+}
+
+.naveg ul li a {
+    color: black;
+    font-size: 20px;
+    font-weight: 800;
+    transition: all 0.5s;
+    list-style: none;
+    text-decoration: none;
+}
+
+.naveg ul li a:hover {
+    color: red;
+}
+
+body {
+    background: rgb(255, 255, 255);
+    color: black;
+
+}
+
+.um {
+    cursor: pointer;
+    display: none;
+}
+
+.um .bar {
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    background: black;
+    margin: 5px auto;
+    transition: all 0.3s;
+}
+
+.um .bar:nth-child(1),
+.um .bar:nth-child(3) {
+    background: red;
+}
+
+.nome img {
+    border: solid rgba(0, 0, 0, 0.479) 2px;
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+
+}
+.cont {
+    text-align: center;
+    margin: 10rem 40px 2rem 40px;
+    max-width: 100%;
+    align-items: center;
+
+}
+
+.cont h1 {
+    font-size: 100px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.cont h3{
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 20px;
+}
+.cont{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+.list li{
+    text-align: left;
+    font-size: 25px;
+    margin: 20px 30px;
+    
+    list-style: square;
+    list-style-position: inside;
+    
+}
+.redes{
+    
+    margin: 50px 50px 10px 50px;
+    
+}
+.redes a{
+    text-decoration:none;
+    font-style: italic;
+    
+
+}
+.redes h6{
+font-size: 22px;
+margin: 7px;
+}
+.l-redes{
+height: 20px;
+width: 20px;
+}
+
+    
+.redes span:hover{
+    background: aqua;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.5s;
+
+}
+.redes a:hover{
+    color: rgb(9, 9, 172);
+
+}
+.none{
+    display: none;
+    font-size: 20px;
+}
+
+@media (max-width:785px) {
+    .naveg {
+        padding: 18px 20px;
+
+    }
+
+    .um {
+        display: block;
+    }
+
+    .um.ativo .bar:nth-child(1) {
+        transform: translateY(8px)rotate(45deg)
+    }
+
+    .um.ativo .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .um.ativo .bar:nth-child(3) {
+        transform: translateY(-8px)rotate(-45deg)
+    }
+
+    .nm {
+        position: fixed;
+        right: -100%;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        background: white;
+        gap: -10px;
+        transition: 0.3s;
+    }
+
+    .nm.ativo {
+        right: 0;
+    }
+
+    .ni {
+        margin: 16px 0;
+    }
+    .cont h1{
+        font-size: 40px;
+    }
+    .cont h3{
+        font-size: 20px;
+    }
+    .list li{
+        font-size: 15px;
+        line-height: normal;
+    }
+.redes h6{
+    font-size: 13px;
+}
+.redes .l-redes{
+    width: 12px;
+    height: 12px;
+}
+.redes p{
+    font-size: 10px;
+}
+.redes .Profissional p{
+  display: inline;
+ margin: 0 7px; 
+
+ 
+}
+.Profissional .none{
+    font-size: 20px;
+}
+}
